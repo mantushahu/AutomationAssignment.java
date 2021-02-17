@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class xlReader15 {
     @Test
-    public void excelReader() throws IOException {
+    public void excelReader() throws IOException, InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
         File file=new File("C:\\Users\\user\\Desktop\\HTML\\Project1.xlsx");
@@ -32,7 +32,7 @@ public class xlReader15 {
         driver.findElement(By.xpath("//*[@id=\"identifierNext\"]/div")).click();
         driver.findElement(By.xpath("hiddenPassword")).sendKeys(password.getStringCellValue());
         driver.findElement(By.xpath("")).click();
-
+        Thread.sleep(2000);
         driver.close();
     }
 }
